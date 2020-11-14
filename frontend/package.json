@@ -9,6 +9,7 @@
     "prettier": "prettier --write './src/**/*.{vue,js}'"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "vue": "^2.6.11",
     "vuex": "^3.4.0"
   },
