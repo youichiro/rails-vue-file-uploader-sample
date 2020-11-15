@@ -37,14 +37,12 @@ export default {
       e.preventDefault();
       this.imageFile = e.target.files[0];
     },
-    upload() {
+    async upload() {
       let formData = new FormData();
+      formData.append("title", this.title);
       formData.append("image", this.imageFile);
-      const params = {
-        title: this.title,
-        image: formData
-      };
-      this.createPost(params);
+      const response = await this.createPost(formData);
+      console.log(response);
     }
   }
 };
