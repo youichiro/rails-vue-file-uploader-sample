@@ -29,7 +29,7 @@ export default {
   name: "PostForm",
   data: () => ({
     title: "",
-    filename: null,
+    filename: "",
     imageFile: null
   }),
   methods: {
@@ -43,6 +43,12 @@ export default {
       formData.append("title", this.title);
       formData.append("image", this.imageFile);
       this.createPost(formData);
+      this.resetForm();
+    },
+    resetForm() {
+      this.title = "";
+      this.filename = "";
+      this.imageFile = null;
     }
   }
 };

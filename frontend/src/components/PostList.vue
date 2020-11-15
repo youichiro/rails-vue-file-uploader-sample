@@ -1,11 +1,10 @@
 <template>
   <div>
     <h2>PostList</h2>
-    <ul>
-      <li v-for="post in posts" :key="post.id">
-        {{ post.title }} {{ post.image_url || "nil" }}
-      </li>
-    </ul>
+    <div v-for="post in posts" :key="post.id">
+      <h3>{{ post.title }}</h3>
+      <img :src="post.image_url || 'nil'" />
+    </div>
   </div>
 </template>
 
