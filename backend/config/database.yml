@@ -5,7 +5,7 @@ default: &default
   username: root
   password:
   host: 127.0.0.1
-  port: <%= ENV.fetch("TECHPIT_MYSQL_PORT") { 3306 } %>
+  port: <%= ENV.fetch("DOCKER_MYSQL_PORT") { 3306 } %>
   socket: /tmp/mysql.sock
 
 development:

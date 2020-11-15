@@ -10,7 +10,7 @@ const state = {
 };
 
 const getters = {
-  posts: state => state.posts
+  posts: state => state.posts.sort((a, b) => b.id - a.id)
 };
 
 const mutations = {

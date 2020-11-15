@@ -4,6 +4,7 @@
     <div v-for="post in posts" :key="post.id">
       <h3>{{ post.title }}</h3>
       <img :src="post.image_url || 'nil'" />
+      <br />
       <button type="submit" @click="del(post.id)">delete</button>
     </div>
   </div>

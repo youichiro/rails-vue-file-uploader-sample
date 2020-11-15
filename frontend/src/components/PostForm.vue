@@ -12,12 +12,13 @@
         id="image"
         name="image"
         accept="image/png,image/jpeg"
-        :value="filename"
         @change="setImage"
       />
     </section>
     <section>
-      <button type="submit" @click="upload">upload</button>
+      <button type="submit" @click="upload" :disabled="isDisabled()">
+        upload
+      </button>
     </section>
   </div>
 </template>
@@ -29,7 +30,6 @@ export default {
   name: "PostForm",
   data: () => ({
     title: "",
-    filename: "",
     imageFile: null
   }),
   methods: {
@@ -37,6 +37,7 @@ export default {
     setImage(e) {
       e.preventDefault();
       this.imageFile = e.target.files[0];
+      this.imageValue = "hoge";
     },
     async upload() {
       let formData = new FormData();
@@ -47,8 +48,10 @@ export default {
     },
     resetForm() {
       this.title = "";
-      this.filename = "";
       this.imageFile = null;
+    },
+    isDisabled() {
+      return this.title === "" || this.imageFile === null;
     }
   }
 };

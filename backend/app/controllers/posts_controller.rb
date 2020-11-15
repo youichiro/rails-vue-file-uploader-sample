@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    render json: Post.find(params[:id])
+    render json: Post.find(params[:id]), methods: [:image_url]
   end
 
   def create
