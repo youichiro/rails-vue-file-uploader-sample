@@ -16,7 +16,7 @@
       />
     </section>
     <section>
-      <button type="submit" @click="upload" :disabled="isDisabled()">
+      <button type="submit" @click="upload" :disabled="title === ''">
         upload
       </button>
     </section>
@@ -37,21 +37,19 @@ export default {
     setImage(e) {
       e.preventDefault();
       this.imageFile = e.target.files[0];
-      this.imageValue = "hoge";
     },
     async upload() {
       let formData = new FormData();
       formData.append("title", this.title);
-      formData.append("image", this.imageFile);
+      if (this.imageFile !== null) {
+        formData.append("image", this.imageFile);
+      }
       this.createPost(formData);
       this.resetForm();
     },
     resetForm() {
       this.title = "";
       this.imageFile = null;
-    },
-    isDisabled() {
-      return this.title === "" || this.imageFile === null;
     }
   }
 };

@@ -3,7 +3,7 @@
     <h2>PostList</h2>
     <div v-for="post in posts" :key="post.id">
       <h3>{{ post.title }}</h3>
-      <img :src="post.image_url || 'nil'" />
+      <img :src="post.image_url" />
       <br />
       <button type="submit" @click="del(post.id)">delete</button>
     </div>
