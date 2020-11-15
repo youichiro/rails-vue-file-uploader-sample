@@ -4,6 +4,13 @@ Rails API + Vue の構成で、Active Storageを使って画像をアップロ�
 
 ![output](https://user-images.githubusercontent.com/20487308/99181576-9c7b1880-2772-11eb-99d9-7908a7804392.gif)
 
+## versions
+
+- ruby 2.7.1
+- rails 6.0.3.4
+- vue 2.6.12
+- vue/cli 4.3.1
+
 ## setup
 
 ```sh
