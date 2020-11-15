@@ -15,7 +15,9 @@ const getters = {
 
 const mutations = {
   setPosts: (state, posts) => (state.posts = posts),
-  appendPost: (state, post) => (state.posts = [...state.posts, post])
+  appendPost: (state, post) => (state.posts = [...state.posts, post]),
+  removePost: (state, id) =>
+    (state.posts = state.posts.filter(post => post.id !== id))
 };
 
 const actions = {
@@ -31,6 +33,14 @@ const actions = {
     try {
       const response = await axios.post(`${apiUrlBase}`, post, headers);
       commit("appendPost", response.data);
+    } catch (e) {
+      console.error(e);
+    }
+  },
+  async deletePost({ commit }, id) {
+    try {
+      axios.delete(`${apiUrlBase}/${id}`);
+      commit("removePost", id);
     } catch (e) {
       console.error(e);
     }

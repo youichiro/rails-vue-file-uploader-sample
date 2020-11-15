@@ -4,6 +4,7 @@
     <div v-for="post in posts" :key="post.id">
       <h3>{{ post.title }}</h3>
       <img :src="post.image_url || 'nil'" />
+      <button type="submit" @click="del(post.id)">delete</button>
     </div>
   </div>
 </template>
@@ -20,7 +21,10 @@ export default {
     ...mapGetters("posts", ["posts"])
   },
   methods: {
-    ...mapActions("posts", ["fetchPosts"])
+    ...mapActions("posts", ["fetchPosts", "deletePost"]),
+    del(id) {
+      this.deletePost(id);
+    }
   }
 };
 </script>
