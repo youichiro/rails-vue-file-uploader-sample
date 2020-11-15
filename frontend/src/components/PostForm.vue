@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>PostForm</h2>
     <section>
       <label for="title">title: </label>
       <input type="text" name="title" v-model="title" placeholder="title" />
@@ -41,8 +42,7 @@ export default {
       let formData = new FormData();
       formData.append("title", this.title);
       formData.append("image", this.imageFile);
-      const response = await this.createPost(formData);
-      console.log(response);
+      this.createPost(formData);
     }
   }
 };

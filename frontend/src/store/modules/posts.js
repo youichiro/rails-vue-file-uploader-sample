@@ -31,7 +31,6 @@ const actions = {
     try {
       const response = await axios.post(`${apiUrlBase}`, post, headers);
       commit("appendPost", response.data);
-      return response.data;
     } catch (e) {
       console.error(e);
     }
