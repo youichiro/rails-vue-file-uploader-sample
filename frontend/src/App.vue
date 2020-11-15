@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <HelloWorld />
+    <PostForm />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import PostForm from "./components/PostForm.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    PostForm
   }
 };
 </script>
