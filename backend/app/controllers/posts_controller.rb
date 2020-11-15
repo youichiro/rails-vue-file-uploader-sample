@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    render json: Post.all
+    render json: Post.all, methods: [:image_url]
   end
 
   def show
