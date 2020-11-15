@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   def create
     post = Post.new(post_params)
     if post.save
-      render json: post
+      render json: post, methods: [:image_url]
     else
       render json: post.errors, status: 422
     end
@@ -34,6 +34,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :image)
+    params.permit(:title, :image)
   end
 end
